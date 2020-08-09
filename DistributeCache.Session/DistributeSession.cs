@@ -91,6 +91,10 @@ namespace DistributeCache.Session
 
         protected virtual string GetSessionIdByCookies(HttpContext context)
         {
+            if (context == null)
+            {
+                return string.Empty;
+            }
             var cookies = context.Request.Cookies;
             string sessionId = default;
             if (cookies.ContainsKey(SESSION_NAME))

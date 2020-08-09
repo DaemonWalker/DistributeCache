@@ -40,7 +40,7 @@ namespace DistributeCache.Session.Test.Web.Controllers
         public IActionResult Set(string info)
         {
             this.HttpContext.Session.SetString("info", info);
-            return Redirect("Index");
+            return Redirect("/");
         }
     }
 }
