@@ -1,0 +1,9 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>@ViewBag.Info</h1>
+<form action="/home/set/" method="post">
+    <input type="text" name="info" />
+    <button type="submit">submit</button>
+</form>
