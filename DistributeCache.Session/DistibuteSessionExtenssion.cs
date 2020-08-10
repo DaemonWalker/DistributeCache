@@ -37,15 +37,15 @@ namespace DistributeCache.Session
             app.UseMiddleware<DistributeSessionMiddleware>();
             return app;
         }
-        public static IServiceCollection AddDistributeSession(this IServiceCollection services,Action<DistributeSessionConfig> configAction)
-        {
-            var config = new DistributeSessionConfig();
-            configAction?.Invoke(config);
-            services.AddHttpContextAccessor();
-            services.AddTransient<ISession, DistributeSession>();
-            services.AddSingleton(config);
-            return services;
-        }
+public static IServiceCollection AddDistributeSession(this IServiceCollection services,Action<DistributeSessionConfig> configAction)
+{
+    var config = new DistributeSessionConfig();
+    configAction?.Invoke(config);
+    services.AddHttpContextAccessor();
+    services.AddTransient<ISession, DistributeSession>();
+    services.AddSingleton(config);
+    return services;
+}
 
         /// <summary>
         /// 这个方法在没找到怎么把Redis抽出去之前先禁用

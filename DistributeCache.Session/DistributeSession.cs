@@ -18,7 +18,7 @@ namespace DistributeCache.Session
         private const string CACHE_SET_NAME = "NSESSIONID_";
         const string SESSION_NAME = "NSessionId";
 
-        public string Id { get; internal set; }
+        public string Id { get; }
 
         public bool IsAvailable => true;
 
